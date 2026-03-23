@@ -1,298 +1,79 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
   <title>The Martha Wendel Gallery</title>
   <meta name="description" content="A collection of oil paintings by Martha Lintner Wendel of Lancaster, Pennsylvania, painted between 1959 and 1969.">
   <link rel="stylesheet" href="./index_files/all.min.css">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --cream: #faf7f2;
-      --warm-white: #ffffff;
-      --charcoal: #2c2c2a;
-      --muted: #5f5e5a;
-      --border: rgba(0,0,0,0.1);
-      --accent: #7a3b1e;
-      --accent-light: #f5ede6;
-      --gold: #b8860b;
-      --radius: 8px;
-      --radius-lg: 14px;
+      --cream: #faf7f2; --warm-white: #ffffff; --charcoal: #2c2c2a;
+      --muted: #5f5e5a; --border: rgba(0,0,0,0.1); --accent: #7a3b1e;
+      --accent-light: #f5ede6; --gold: #b8860b; --radius: 8px; --radius-lg: 14px;
     }
-
-    body {
-      font-family: Georgia, 'Times New Roman', serif;
-      background: var(--cream);
-      color: var(--charcoal);
-      line-height: 1.7;
-    }
-
-    .hero {
-      background: var(--charcoal);
-      color: #f5f0e8;
-      padding: 64px 24px 56px;
-      text-align: center;
-    }
-
-    .hero-kicker {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.8rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 16px;
-    }
-
-    .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: normal;
-      letter-spacing: -0.01em;
-      margin-bottom: 20px;
-      line-height: 1.2;
-    }
-
-    .hero-dates {
-      font-size: 1rem;
-      color: #c8bfb0;
-      font-style: italic;
-      margin-bottom: 32px;
-    }
-
-    .hero-divider {
-      width: 48px;
-      height: 1px;
-      background: var(--gold);
-      margin: 0 auto 32px;
-    }
-
-    .hero-intro {
-      max-width: 680px;
-      margin: 0 auto;
-      font-size: 1rem;
-      color: #d4cbbf;
-      line-height: 1.8;
-    }
-
-    .family-section {
-      background: var(--accent-light);
-      border-top: 3px solid var(--accent);
-      padding: 48px 24px;
-    }
-
-    .family-inner {
-      max-width: 720px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .family-section h2 {
-      font-size: 1.4rem;
-      font-weight: normal;
-      color: var(--accent);
-      margin-bottom: 24px;
-      line-height: 1.4;
-    }
-
-    .family-section p {
-      font-size: 0.95rem;
-      color: var(--muted);
-      margin-bottom: 16px;
-    }
-
-    .family-section a {
-      color: var(--accent);
-    }
-
-    .contact-block {
-      margin-top: 28px;
-      padding: 20px 28px;
-      background: white;
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(122,59,30,0.2);
-      display: inline-block;
-      text-align: left;
-    }
-
-    .contact-block p {
-      margin-bottom: 4px;
-      font-size: 0.9rem;
-    }
-
-    .contact-block strong {
-      color: var(--charcoal);
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .gallery-section {
-      padding: 56px 24px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .gallery-section h2 {
-      font-size: 1.5rem;
-      font-weight: normal;
-      text-align: center;
-      margin-bottom: 8px;
-      color: var(--charcoal);
-    }
-
-    .gallery-subtitle {
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.9rem;
-      margin-bottom: 40px;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 24px;
-    }
-
-    .gallery-item {
-      background: white;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      border: 1px solid var(--border);
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .gallery-item:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .gallery-caption {
-      padding: 14px 16px;
-    }
-
-    .caption-title {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 0.95rem;
-      font-style: italic;
-      color: var(--charcoal);
-      margin-bottom: 6px;
-    }
-
-    .caption-meta {
-      font-size: 0.78rem;
-      color: var(--muted);
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-    }
-
-    .caption-meta span {
-      display: block;
-    }
-
-    .gallery-loading {
-      text-align: center;
-      color: var(--muted);
-      font-style: italic;
-      padding: 48px 0;
-      grid-column: 1 / -1;
-    }
-
-    .lightbox {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.92);
-      z-index: 1000;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-    }
-
-    .lightbox.open {
-      display: flex;
-    }
-
-    .lightbox-inner {
-      max-width: 900px;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .lightbox-inner img {
-      max-height: 75vh;
-      max-width: 100%;
-      object-fit: contain;
-      border-radius: var(--radius);
-    }
-
-    .lightbox-meta {
-      text-align: center;
-      color: #e0d8cc;
-    }
-
-    .lightbox-title {
-      font-family: Georgia, 'Times New Roman', serif;
-      font-size: 1.1rem;
-      font-style: italic;
-      margin-bottom: 8px;
-    }
-
-    .lightbox-info {
-      font-size: 0.85rem;
-      color: #a09080;
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.7;
-    }
-
-    .lightbox-info span {
-      display: block;
-    }
-
-    .lightbox-close {
-      position: fixed;
-      top: 20px;
-      right: 24px;
-      background: none;
-      border: 1px solid rgba(255,255,255,0.3);
-      color: white;
-      font-size: 0.9rem;
-      font-family: Arial, Helvetica, sans-serif;
-      padding: 8px 16px;
-      border-radius: 999px;
-      cursor: pointer;
-    }
-
-    .lightbox-close:hover {
-      background: rgba(255,255,255,0.1);
-    }
-
-    footer {
-      background: var(--charcoal);
-      color: #a09080;
-      text-align: center;
-      padding: 32px 24px;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.85rem;
-    }
-
-    footer a {
-      color: var(--gold);
-      text-decoration: none;
-    }
-
-    footer p + p {
-      margin-top: 8px;
-    }
+    body { font-family: Georgia, 'Times New Roman', serif; background: var(--cream); color: var(--charcoal); line-height: 1.7; }
+    .hero { background: var(--charcoal); color: #f5f0e8; padding: 64px 24px 56px; text-align: center; }
+    .hero-kicker { font-family: Arial, Helvetica, sans-serif; font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: normal; letter-spacing: -0.01em; margin-bottom: 20px; line-height: 1.2; }
+    .hero-dates { font-size: 1rem; color: #c8bfb0; font-style: italic; margin-bottom: 32px; }
+    .hero-divider { width: 48px; height: 1px; background: var(--gold); margin: 0 auto 32px; }
+    .hero-intro { max-width: 680px; margin: 0 auto; font-size: 1rem; color: #d4cbbf; line-height: 1.8; }
+    .portrait-section { background: var(--charcoal); padding: 0 24px 56px; display: flex; justify-content: center; }
+    .portrait-inner { display: flex; flex-direction: column; align-items: center; gap: 16px; max-width: 340px; }
+    .portrait-inner img { width: 100%; max-width: 300px; border-radius: var(--radius-lg); border: 3px solid rgba(184,134,11,0.4); display: block; }
+    .portrait-caption { font-family: Arial, Helvetica, sans-serif; font-size: 0.82rem; color: #a09080; text-align: center; line-height: 1.5; }
+    .family-section { background: var(--accent-light); border-top: 3px solid var(--accent); padding: 48px 24px; }
+    .family-inner { max-width: 720px; margin: 0 auto; text-align: center; }
+    .family-section h2 { font-size: 1.4rem; font-weight: normal; color: var(--accent); margin-bottom: 24px; line-height: 1.4; }
+    .family-section p { font-size: 0.95rem; color: var(--muted); margin-bottom: 16px; }
+    .family-section a { color: var(--accent); }
+    .contact-block { margin-top: 28px; padding: 20px 28px; background: white; border-radius: var(--radius-lg); border: 1px solid rgba(122,59,30,0.2); display: inline-block; text-align: left; }
+    .contact-block p { margin-bottom: 4px; font-size: 0.9rem; }
+    .contact-block strong { color: var(--charcoal); font-family: Arial, Helvetica, sans-serif; }
+    .gallery-section { padding: 56px 24px; max-width: 1200px; margin: 0 auto; }
+    .gallery-section h2 { font-size: 1.5rem; font-weight: normal; text-align: center; margin-bottom: 8px; color: var(--charcoal); }
+    .gallery-subtitle { text-align: center; color: var(--muted); font-size: 0.9rem; margin-bottom: 24px; font-family: Arial, Helvetica, sans-serif; }
+    .gallery-controls { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 32px; }
+    .gallery-controls input, .gallery-controls select { font-family: Arial, Helvetica, sans-serif; font-size: 0.88rem; padding: 8px 14px; border: 1px solid rgba(0,0,0,0.18); border-radius: 999px; background: white; color: var(--charcoal); outline: none; transition: border-color 0.2s; }
+    .gallery-controls input { width: 220px; }
+    .gallery-controls input:focus, .gallery-controls select:focus { border-color: var(--accent); }
+    .gallery-controls input::placeholder { color: #aaa; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; }
+    .gallery-item { background: white; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .gallery-item:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+    .gallery-item.hidden { display: none; }
+    .gallery-item img { width: 100%; height: 220px; object-fit: cover; display: block; }
+    .gallery-caption { padding: 14px 16px; }
+    .caption-title { font-family: Georgia, 'Times New Roman', serif; font-size: 0.95rem; font-style: italic; color: var(--charcoal); margin-bottom: 6px; }
+    .caption-meta { font-size: 0.78rem; color: var(--muted); font-family: Arial, Helvetica, sans-serif; line-height: 1.6; }
+    .caption-meta span { display: block; }
+    .gallery-loading { text-align: center; color: var(--muted); font-style: italic; padding: 48px 0; grid-column: 1 / -1; }
+    .no-results { text-align: center; color: var(--muted); font-style: italic; padding: 48px 0; display: none; }
+    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 1000; align-items: center; justify-content: center; padding: 24px; }
+    .lightbox.open { display: flex; }
+    .lightbox-inner { max-width: 900px; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+    .lightbox-inner img { max-height: 72vh; max-width: 100%; object-fit: contain; border-radius: var(--radius); }
+    .lightbox-meta { text-align: center; color: #e0d8cc; }
+    .lightbox-title { font-family: Georgia, 'Times New Roman', serif; font-size: 1.1rem; font-style: italic; margin-bottom: 8px; }
+    .lightbox-info { font-size: 0.85rem; color: #a09080; font-family: Arial, Helvetica, sans-serif; line-height: 1.7; }
+    .lightbox-info span { display: block; }
+    .lightbox-close { position: fixed; top: 20px; right: 24px; background: none; border: 1px solid rgba(255,255,255,0.3); color: white; font-size: 0.9rem; font-family: Arial, Helvetica, sans-serif; padding: 8px 16px; border-radius: 999px; cursor: pointer; }
+    .lightbox-close:hover { background: rgba(255,255,255,0.1); }
+    .lightbox-counter { position: fixed; top: 22px; left: 50%; transform: translateX(-50%); font-family: Arial, Helvetica, sans-serif; font-size: 0.82rem; color: rgba(255,255,255,0.5); }
+    .lightbox-arrow { position: fixed; top: 50%; transform: translateY(-50%); background: none; border: 1px solid rgba(255,255,255,0.3); color: white; font-size: 1.4rem; width: 48px; height: 48px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.15s; user-select: none; }
+    .lightbox-arrow:hover { background: rgba(255,255,255,0.15); }
+    .lightbox-arrow.prev { left: 16px; }
+    .lightbox-arrow.next { right: 16px; }
+    .back-to-top { position: fixed; bottom: 28px; right: 24px; background: var(--accent); color: white; border: none; border-radius: 999px; padding: 10px 18px; font-family: Arial, Helvetica, sans-serif; font-size: 0.82rem; cursor: pointer; opacity: 0; pointer-events: none; transition: opacity 0.3s; z-index: 500; }
+    .back-to-top.visible { opacity: 1; pointer-events: auto; }
+    .back-to-top:hover { background: #5a2a12; }
+    footer { background: var(--charcoal); color: #a09080; text-align: center; padding: 32px 24px; font-family: Arial, Helvetica, sans-serif; font-size: 0.85rem; }
+    footer a { color: var(--gold); text-decoration: none; }
+    footer p + p { margin-top: 8px; }
+    @media (max-width: 600px) { .gallery-controls input { width: 100%; } .lightbox-arrow { display: none; } }
   </style>
 </head>
 <body>
@@ -312,6 +93,15 @@
     </p>
   </header>
 
+  <div class="portrait-section">
+    <div class="portrait-inner">
+      <img
+        src="https://res.cloudinary.com/dlxmgewap/image/upload/v1774299112/Martha_and_PJ_Wendel_lr4dre.jpg"
+        alt="Philip J. Wendel and Martha Lintner Wendel">
+      <p class="portrait-caption">Philip J. Wendel and Martha Lintner Wendel</p>
+    </div>
+  </div>
+
   <section class="family-section">
     <div class="family-inner">
       <h2>If you are here because you are a branch, twig or leaf on Martha Lintner Wendel's family tree&nbsp;…</h2>
@@ -326,8 +116,8 @@
         Visit <a href="https://bit.ly/4gyDRnw" target="_blank" rel="noopener noreferrer">https://bit.ly/4gyDRnw</a>
       </p>
       <p>
-        This collection has been a labor of love for several decades and I have done my best to update
-        the information shown here for each painting, as of January 2025.
+        This collection has been a labor of love for several decades. I have done my best to keep
+        the information shown here for each painting as accurate and current as possible.
       </p>
       <p>
         To add a photo or to correct information about any painting shown, or if you have information
@@ -344,13 +134,29 @@
   <section class="gallery-section">
     <h2>The Paintings</h2>
     <p class="gallery-subtitle" id="gallery-subtitle">Loading…</p>
+
+    <div class="gallery-controls">
+      <input type="text" id="search-input" placeholder="Search by title or owner…" aria-label="Search paintings">
+      <select id="sort-select" aria-label="Sort paintings">
+        <option value="default">Order: As uploaded</option>
+        <option value="title-az">Title: A – Z</option>
+        <option value="title-za">Title: Z – A</option>
+        <option value="date-asc">Date: Oldest first</option>
+        <option value="date-desc">Date: Newest first</option>
+      </select>
+    </div>
+
     <div class="gallery-grid" id="gallery">
       <p class="gallery-loading">Loading paintings…</p>
     </div>
+    <p class="no-results" id="no-results">No paintings match your search.</p>
   </section>
 
-  <div class="lightbox" id="lightbox">
-    <button class="lightbox-close" id="lightboxClose">Close</button>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Painting viewer">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">Close</button>
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+    <button class="lightbox-arrow prev" id="lightboxPrev" aria-label="Previous painting">&#8592;</button>
+    <button class="lightbox-arrow next" id="lightboxNext" aria-label="Next painting">&#8594;</button>
     <div class="lightbox-inner">
       <img src="" alt="" id="lightboxImage">
       <div class="lightbox-meta">
@@ -360,6 +166,8 @@
     </div>
   </div>
 
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">&#8593; Top</button>
+
   <footer>
     <p>© 2026 David Kirk &nbsp;·&nbsp; <a href="mailto:DavidKirk@thePRguy.com">DavidKirk@thePRguy.com</a></p>
   </footer>
@@ -367,129 +175,86 @@
   <script>
     const CLOUD_NAME = "dlxmgewap";
     const TAG = "martha";
-
-    const MONTHS = ['January','February','March','April','May','June',
-                    'July','August','September','October','November','December'];
+    const MONTHS  = ['January','February','March','April','May','June','July','August','September','October','November','December'];
     const SEASONS = ['Spring','Summer','Autumn','Fall','Winter'];
 
-    function isYear(token) {
-      return /^\d{4}$/.test(token);
-    }
-
-    function isMonth(token) {
-      return MONTHS.includes(token);
-    }
-
-    function isSeason(token) {
-      return SEASONS.includes(token);
-    }
-
-    function isDay(token) {
-      return /^\d{1,2}$/.test(token);
-    }
+    function isYear(t)   { return /^\d{4}$/.test(t); }
+    function isMonth(t)  { return MONTHS.includes(t); }
+    function isSeason(t) { return SEASONS.includes(t); }
+    function isDay(t)    { return /^\d{1,2}$/.test(t); }
 
     function parseFilename(publicId) {
       let name = publicId.split('/').pop();
       name = name.replace(/\.[^.]+$/, '');
       name = name.replace(/_[a-z0-9]{6,8}$/i, '');
-
       const tokens = name.split('_');
-
-      let dateStart = -1;
-      let dateEnd = -1;
+      let dateStart = -1, dateEnd = -1;
 
       for (let i = 0; i < tokens.length; i++) {
-        if (tokens[i] === 'Date' && tokens[i+1] &&
-            (tokens[i+1].toLowerCase() === 'unknown' ||
-             tokens[i+1].toLowerCase() === 'unknwon')) {
-          dateStart = i;
-          dateEnd = i + 1;
-          break;
+        if (tokens[i] === 'Date' && tokens[i+1] && tokens[i+1].toLowerCase().startsWith('unkn')) {
+          dateStart = i; dateEnd = i + 1; break;
         }
-
         if (isYear(tokens[i])) {
-          let lookback = 0;
-          if (i >= 2 && isMonth(tokens[i-2]) && isDay(tokens[i-1])) {
-            lookback = 2;
-          } else if (i >= 1 && (isMonth(tokens[i-1]) || isSeason(tokens[i-1]))) {
-            lookback = 1;
-          }
-          dateStart = i - lookback;
-          dateEnd = i;
-          break;
+          let lb = 0;
+          if (i >= 2 && isMonth(tokens[i-2]) && isDay(tokens[i-1])) lb = 2;
+          else if (i >= 1 && (isMonth(tokens[i-1]) || isSeason(tokens[i-1]))) lb = 1;
+          dateStart = i - lb; dateEnd = i; break;
         }
       }
 
-      let titleTokens, dateTokens, ownerTokens;
-
-      if (dateStart === -1) {
-        titleTokens = tokens;
-        dateTokens = [];
-        ownerTokens = [];
-      } else {
-        titleTokens = tokens.slice(0, dateStart);
-        dateTokens = tokens.slice(dateStart, dateEnd + 1);
-        ownerTokens = tokens.slice(dateEnd + 1);
-      }
+      const titleTokens = dateStart === -1 ? tokens : tokens.slice(0, dateStart);
+      const dateTokens  = dateStart === -1 ? [] : tokens.slice(dateStart, dateEnd + 1);
+      const ownerTokens = dateStart === -1 ? [] : tokens.slice(dateEnd + 1);
 
       let titleRaw = titleTokens.join(' ').trim();
-      let displayTitle = '';
-      const titleLower = titleRaw.toLowerCase();
-
-      if (titleLower === 'untitled' || titleLower === '') {
+      let displayTitle;
+      const tl = titleRaw.toLowerCase();
+      if (tl === 'untitled' || tl === '') {
         displayTitle = 'Untitled';
-      } else if (titleLower.startsWith('untitled ')) {
-        const description = titleRaw.slice(9).trim();
-        displayTitle = description ? 'Untitled (' + description + ')' : 'Untitled';
+      } else if (tl.startsWith('untitled ')) {
+        const desc = titleRaw.slice(9).trim();
+        displayTitle = desc ? 'Untitled (' + desc + ')' : 'Untitled';
       } else {
         displayTitle = titleRaw;
       }
 
-      const dateStr = dateTokens.join(' ').trim();
-      let displayDate = '';
-      if (!dateStr || dateStr.toLowerCase().includes('unknown')) {
-        displayDate = 'Date: Unknown';
-      } else {
-        displayDate = 'Date: ' + dateStr;
-      }
+      const dateStr     = dateTokens.join(' ').trim();
+      const displayDate = (!dateStr || dateStr.toLowerCase().includes('unkn')) ? 'Date: Unknown' : 'Date: ' + dateStr;
+      const yearMatch   = dateStr.match(/\d{4}/);
+      const sortYear    = yearMatch ? parseInt(yearMatch[0]) : 0;
 
-      let ownerRaw = ownerTokens.join(' ').trim();
-      ownerRaw = ownerRaw.replace(/^Collection of\s*/i, '').trim();
+      let ownerRaw = ownerTokens.join(' ').trim().replace(/^Collection of\s*/i, '').trim();
+      const displayOwner = (!ownerRaw || ownerRaw.toLowerCase() === 'unknown')
+        ? 'Owner: Unknown'
+        : 'Owner: In the collection of ' + ownerRaw;
 
-      let displayOwner = '';
-      if (!ownerRaw || ownerRaw.toLowerCase() === 'unknown') {
-        displayOwner = 'Owner: Unknown';
-      } else {
-        displayOwner = 'Owner: In the collection of ' + ownerRaw;
-      }
-
-      return { title: displayTitle, date: displayDate, owner: displayOwner };
+      return { title: displayTitle, date: displayDate, owner: displayOwner, sortYear };
     }
+
+    let allFigures = [];
+    let visibleFigures = [];
+    let currentIndex = 0;
 
     async function loadGallery() {
       try {
-        const response = await fetch(
-          `https://res.cloudinary.com/${CLOUD_NAME}/image/list/${TAG}.json`
-        );
+        const response = await fetch(`https://res.cloudinary.com/${CLOUD_NAME}/image/list/${TAG}.json`);
         if (!response.ok) throw new Error('Could not load gallery');
         const data = await response.json();
         buildGallery(data.resources);
-      } catch (error) {
-        document.querySelector('.gallery-loading').textContent =
-          'Gallery temporarily unavailable. Please try again shortly.';
+      } catch (e) {
+        document.querySelector('.gallery-loading').textContent = 'Gallery temporarily unavailable. Please try again shortly.';
       }
     }
 
     function buildGallery(images) {
-      const gallery = document.getElementById('gallery');
+      const gallery  = document.getElementById('gallery');
       const subtitle = document.getElementById('gallery-subtitle');
       gallery.innerHTML = '';
 
       const count = images.length;
-      subtitle.textContent = count + ' work' + (count !== 1 ? 's' : '') +
-                             ' \u00b7 Click any painting to enlarge';
+      subtitle.textContent = count + ' work' + (count !== 1 ? 's' : '') + ' \u00b7 Click any painting to enlarge';
 
-      images.forEach(image => {
+      allFigures = images.map(image => {
         const publicId = image.public_id;
         const thumbUrl = `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/w_600,h_440,c_fill/${publicId}.jpg`;
         const fullUrl  = `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/${publicId}.jpg`;
@@ -497,10 +262,12 @@
 
         const figure = document.createElement('figure');
         figure.className = 'gallery-item';
-        figure.dataset.full  = fullUrl;
-        figure.dataset.title = parsed.title;
-        figure.dataset.date  = parsed.date;
-        figure.dataset.owner = parsed.owner;
+        figure.dataset.full      = fullUrl;
+        figure.dataset.title     = parsed.title;
+        figure.dataset.date      = parsed.date;
+        figure.dataset.owner     = parsed.owner;
+        figure.dataset.sortYear  = parsed.sortYear;
+        figure.dataset.sortTitle = parsed.title.toLowerCase();
 
         figure.innerHTML = `
           <img src="${thumbUrl}" alt="${parsed.title}" loading="lazy">
@@ -510,45 +277,106 @@
               <span>${parsed.date}</span>
               <span>${parsed.owner}</span>
             </div>
-          </div>
-        `;
+          </div>`;
 
         gallery.appendChild(figure);
+        return figure;
       });
+
+      visibleFigures = [...allFigures];
+      applyControls();
     }
 
-    loadGallery();
+    function applyControls() {
+      const query    = document.getElementById('search-input').value.toLowerCase().trim();
+      const sortVal  = document.getElementById('sort-select').value;
+      const gallery  = document.getElementById('gallery');
+      const noRes    = document.getElementById('no-results');
+      const subtitle = document.getElementById('gallery-subtitle');
 
-    const lightbox      = document.getElementById('lightbox');
-    const lightboxImage = document.getElementById('lightboxImage');
-    const lightboxTitle = document.getElementById('lightboxTitle');
-    const lightboxInfo  = document.getElementById('lightboxInfo');
-    const lightboxClose = document.getElementById('lightboxClose');
+      let filtered = allFigures.filter(fig => {
+        if (!query) return true;
+        return fig.dataset.title.toLowerCase().includes(query) ||
+               fig.dataset.owner.toLowerCase().includes(query) ||
+               fig.dataset.date.toLowerCase().includes(query);
+      });
 
-    document.getElementById('gallery').addEventListener('click', function(e) {
-      const figure = e.target.closest('.gallery-item');
-      if (!figure) return;
-      lightboxImage.src = figure.dataset.full;
-      lightboxImage.alt = figure.dataset.title;
-      lightboxTitle.textContent = 'Title: ' + figure.dataset.title;
-      lightboxInfo.innerHTML =
-        '<span>' + figure.dataset.date  + '</span>' +
-        '<span>' + figure.dataset.owner + '</span>';
-      lightbox.classList.add('open');
-    });
+      if (sortVal === 'title-az') filtered.sort((a,b) => a.dataset.sortTitle.localeCompare(b.dataset.sortTitle));
+      else if (sortVal === 'title-za') filtered.sort((a,b) => b.dataset.sortTitle.localeCompare(a.dataset.sortTitle));
+      else if (sortVal === 'date-asc')  filtered.sort((a,b) => (parseInt(a.dataset.sortYear)||9999) - (parseInt(b.dataset.sortYear)||9999));
+      else if (sortVal === 'date-desc') filtered.sort((a,b) => (parseInt(b.dataset.sortYear)||0) - (parseInt(a.dataset.sortYear)||0));
+
+      allFigures.forEach(fig => { fig.classList.add('hidden'); gallery.appendChild(fig); });
+      filtered.forEach(fig => { fig.classList.remove('hidden'); gallery.appendChild(fig); });
+
+      visibleFigures = filtered;
+      const shown = filtered.length;
+      subtitle.textContent = shown + ' work' + (shown !== 1 ? 's' : '') + ' \u00b7 Click any painting to enlarge';
+      noRes.style.display = shown === 0 ? 'block' : 'none';
+    }
+
+    document.getElementById('search-input').addEventListener('input', applyControls);
+    document.getElementById('sort-select').addEventListener('change', applyControls);
+
+    function openLightbox(index) {
+      currentIndex = index;
+      const fig = visibleFigures[index];
+      document.getElementById('lightboxImage').src = fig.dataset.full;
+      document.getElementById('lightboxImage').alt = fig.dataset.title;
+      document.getElementById('lightboxTitle').textContent = 'Title: ' + fig.dataset.title;
+      document.getElementById('lightboxInfo').innerHTML =
+        '<span>' + fig.dataset.date + '</span><span>' + fig.dataset.owner + '</span>';
+      document.getElementById('lightboxCounter').textContent = (index + 1) + ' of ' + visibleFigures.length;
+      document.getElementById('lightbox').classList.add('open');
+    }
 
     function closeLightbox() {
-      lightbox.classList.remove('open');
-      lightboxImage.src = '';
+      document.getElementById('lightbox').classList.remove('open');
+      document.getElementById('lightboxImage').src = '';
     }
 
-    lightboxClose.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', function(e) {
-      if (e.target === lightbox) closeLightbox();
+    document.getElementById('gallery').addEventListener('click', function(e) {
+      const fig = e.target.closest('.gallery-item');
+      if (!fig) return;
+      const index = visibleFigures.indexOf(fig);
+      if (index !== -1) openLightbox(index);
     });
+
+    document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+
+    document.getElementById('lightboxPrev').addEventListener('click', function() {
+      if (!visibleFigures.length) return;
+      currentIndex = (currentIndex - 1 + visibleFigures.length) % visibleFigures.length;
+      openLightbox(currentIndex);
+    });
+
+    document.getElementById('lightboxNext').addEventListener('click', function() {
+      if (!visibleFigures.length) return;
+      currentIndex = (currentIndex + 1) % visibleFigures.length;
+      openLightbox(currentIndex);
+    });
+
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) closeLightbox();
+    });
+
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') closeLightbox();
+      if (!document.getElementById('lightbox').classList.contains('open')) return;
+      if (e.key === 'Escape')     closeLightbox();
+      if (e.key === 'ArrowLeft')  document.getElementById('lightboxPrev').click();
+      if (e.key === 'ArrowRight') document.getElementById('lightboxNext').click();
     });
+
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', function() {
+      backToTop.classList.toggle('visible', window.scrollY > 400);
+    });
+    backToTop.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    loadGallery();
   </script>
 
-</body></html>
+</body>
+</html>
