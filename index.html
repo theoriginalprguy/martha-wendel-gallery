@@ -174,7 +174,7 @@
 
   <script>
     const CLOUD_NAME = "dlxmgewap";
-    const TAG = "martha";
+    const FOLDER = "martha-wendel";
     const MONTHS  = ['January','February','March','April','May','June','July','August','September','October','November','December'];
     const SEASONS = ['Spring','Summer','Autumn','Fall','Winter'];
 
@@ -238,7 +238,9 @@
     async function loadGallery() {
       try {
         const cacheBust = Date.now();
-        const response = await fetch(`https://res.cloudinary.com/${CLOUD_NAME}/image/list/${TAG}.json?_cb=${cacheBust}`);
+        const response = await fetch(
+          `https://res.cloudinary.com/${CLOUD_NAME}/image/list/folder:${FOLDER}.json?_cb=${cacheBust}`
+        );
         if (!response.ok) throw new Error('Could not load gallery');
         const data = await response.json();
         buildGallery(data.resources);
