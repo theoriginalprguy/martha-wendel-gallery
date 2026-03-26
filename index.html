@@ -237,7 +237,8 @@
 
     async function loadGallery() {
       try {
-        const response = await fetch(`https://res.cloudinary.com/${CLOUD_NAME}/image/list/${TAG}.json`);
+        const cacheBust = Date.now();
+        const response = await fetch(`https://res.cloudinary.com/${CLOUD_NAME}/image/list/${TAG}.json?_cb=${cacheBust}`);
         if (!response.ok) throw new Error('Could not load gallery');
         const data = await response.json();
         buildGallery(data.resources);
